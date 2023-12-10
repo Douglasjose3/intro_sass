@@ -1,0 +1,94 @@
+@use './secoes/produtos.scss';
+@use './secoes/acessorios.scss';
+@use './config/cores.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+h1 {
+    color: #fff;
+    font-size: 48px;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: cores.$corPrincipal;
+    position: sticky;
+    top: 0;
+    left: 0;
+    border-bottom: 20px solid cores.$corDeApoioUm;
+    box-shadow: 0 10px 20px cores.$corDeApoioDois;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 56px 0;
+}
+
+section img {
+    max-width: 100%;
+}
+
+footer {
+    padding: 10px;
+    background-color: cores.$corDeApoioUm;
+    font-weight: bold;
+    text-align: center;
+    color: cores.$corDeApoioDois;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
